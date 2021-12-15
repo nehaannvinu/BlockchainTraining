@@ -2,8 +2,8 @@ async function main() {
     const NAVI = await ethers.getContractFactory("NAVI")
   
     // Start deployment, returning a promise that resolves to a contract object
-    const NAVI = await NAVI.deploy()
-    console.log("Contract deployed to address:", NAVI.address)
+    const NAV = await NAVI.deploy()
+    console.log("Contract deployed to address:", NAV.address)
   }
   
   main()
