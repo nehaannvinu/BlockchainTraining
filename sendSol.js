@@ -7,19 +7,21 @@ const web3 =  require("@solana/web3.js");
     web3.clusterApiUrl('devnet'),
     'confirmed',
   );
-  // Uncomment the below command to test your connection to your node
+
+  //Testing connection 
   //console.log(await connection.getEpochInfo())
 
   // Generate a new random public key
   const from = web3.Keypair.generate();
+
   const airdropSignature = await connection.requestAirdrop(
     from.publicKey,
-    web3.LAMPORTS_PER_SOL,
+    web3.LAMPORTS_PER_SOL, //10^7 Lamports in 1 SOL
   );
   await connection.confirmTransaction(airdropSignature);
 
-  // Generate a new random public key
   const to = "3Gm54E6ujH6wzURU2GdCkLz9SXLxGHDrj9knhW6ZgDHM";
+
 
   // Add transfer instruction to transaction
   const transaction = new web3.Transaction().add(
@@ -34,7 +36,9 @@ const web3 =  require("@solana/web3.js");
   const signature = await web3.sendAndConfirmTransaction(
     connection,
     transaction,
-    [from],
+    [from], //check format
   );
   console.log('SIGNATURE', signature);
+
+  console.log("Finished Transaction");
 })();
