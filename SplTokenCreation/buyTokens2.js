@@ -1,3 +1,7 @@
+//Transfer Token EXAMPLE
+//Receipient pays the transaction fee for transaction
+//(With create mint)
+
 const web3 = require("@solana/web3.js");
 const splToken = require("@solana/spl-token");
 
@@ -54,9 +58,7 @@ const splToken = require("@solana/spl-token");
     100 * web3.LAMPORTS_PER_SOL //amount
   );
 
-  //let txn = new web3.Transaction();
 
-  // Add token transfer instructions to transaction
   let tr = new web3.Transaction();
 
   tr.feePayer=to.publicKey;

@@ -1,3 +1,7 @@
+//Transfer Token EXAMPLE
+//Receipient pays the transaction fee for transaction
+//(Custom Minting)
+
 const web3 = require("@solana/web3.js");
 const splToken = require("@solana/spl-token");
 
@@ -42,12 +46,12 @@ const splToken = require("@solana/spl-token");
   console.log("Token address of sender: " + fromTokenAccount.address.toBase58());
   console.log("Token address of receiver: " + toTokenAccount.address.toBase58());
 
-//   await tk.mintTo(
-//     fromTokenAccount.address, //dest
-//     from.publicKey, //authority
-//     [],
-//     100 * web3.LAMPORTS_PER_SOL //amount
-//   );
+  await tk.mintTo(
+    fromTokenAccount.address, //dest
+    from.publicKey, //authority
+    [],
+    100 * web3.LAMPORTS_PER_SOL //amount
+  );
 
   // Add token transfer instructions to transaction
   let transaction = new web3.Transaction().add(

@@ -1,3 +1,7 @@
+//Transfer Token EXAMPLE
+//Receipient pays the transaction fee for transaction
+//(Partial sign by recepient and sender)
+
 const web3 = require("@solana/web3.js");
 const splToken = require("@solana/spl-token");
 const nacl = require("tweetnacl");
