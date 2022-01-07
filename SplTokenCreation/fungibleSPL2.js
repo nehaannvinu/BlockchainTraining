@@ -7,6 +7,9 @@ const splToken = require("@solana/spl-token");
   //create connection to devnet
   const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
 
+  result = await splToken.Token.getMinBalanceRentForExemptAccount(connection);
+  await console.log(result);
+
   //generate keypair and airdrop 1000000000 Lamports (1 SOL)
   let pk = new Uint8Array([
     238, 190, 196, 247, 181, 90, 139, 127, 153, 151, 203, 35, 72, 25, 35, 153,
