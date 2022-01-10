@@ -3,6 +3,8 @@
 use std::io;
 
 pub fn main() {
+
+    //Read the lenght of the array
     let mut length = String::new();
     println!("Enter array length");
 
@@ -12,11 +14,13 @@ pub fn main() {
 
     let length: usize = length.trim().parse().expect("The value was not a length");
 
+    //Create a vector of given length
     let mut array = vec![0; length];
     println!("{:?}", array);
 
     let mut num = String::new();
 
+    //Populate the array
     for x in 0..length {
         println!("Enter number { }:", x + 1);
 
