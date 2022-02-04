@@ -1,3 +1,3 @@
 # BlockchainTraining
 
-Head over to specific brancjes to explore code
+Head over to specific branches to explore code
